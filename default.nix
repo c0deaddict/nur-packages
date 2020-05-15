@@ -8,14 +8,26 @@
 
 { pkgs ? import <nixpkgs> {} }:
 
-{
+rec {
   # The `lib`, `modules`, and `overlay` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  example-package = pkgs.callPackage ./pkgs/example-package { };
-  # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
-  # ...
-}
+  keyhub-cli = pkgs.callPackage ./pkgs/keyhub-cli {};
 
+  import-garmin-connect = pkgs.python3Packages.callPackage ./pkgs/import-garmin-connect {};
+
+  salt-py3 = pkgs.callPackage ./pkgs/salt-py3 {};
+
+  salt-lint = pkgs.callPackage ./pkgs/salt-lint {
+    salt = salt-py3;
+  };
+
+  prometheus-unbound-exporter = pkgs.callPackage ./pkgs/prometheus-unbound-exporter {};
+
+  tplink-configurator = import ./pkgs/tplink-configurator {
+    inherit (pkgs) writeScriptBin oraclejdk8;
+  };
+
+}
