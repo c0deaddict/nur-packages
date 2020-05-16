@@ -28,4 +28,12 @@ rec {
 
   tplink-configurator = pkgs.callPackage ./pkgs/tplink-configurator {};
 
+  pg_flame = pkgs.callPackage ./pkgs/pg_flame {};
+
+  goreleaser = pkgs.callPackage ./pkgs/goreleaser {};
+
+  rofi-pulse = pkgs.callPackage ./pkgs/rofi-pulse { my-lib = lib; };
+
+  bitwarden-rofi = pkgs.callPackage ./pkgs/bitwarden-rofi {};
+
 }
