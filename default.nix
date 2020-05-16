@@ -26,8 +26,6 @@ rec {
 
   prometheus-unbound-exporter = pkgs.callPackage ./pkgs/prometheus-unbound-exporter {};
 
-  tplink-configurator = import ./pkgs/tplink-configurator {
-    inherit (pkgs) writeScriptBin oraclejdk8;
-  };
+  tplink-configurator = pkgs.callPackage ./pkgs/tplink-configurator {};
 
 }
