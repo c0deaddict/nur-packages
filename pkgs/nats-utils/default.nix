@@ -11,8 +11,9 @@ buildGoModule rec {
     sha256 = "1nfl44jc0wj48f6x6hsxbwb4hn7zah3vk7f2ilg322c432kwj6kg";
   };
 
-  # TODO: replace with vendorSha256 for NixOS >= 20.09
-  modSha256 = "0cc43b5j4isd02i70x8wcav824zaj4a0azcnmg5d16l9817gy5n0";
+  vendorSha256 = "0cc43b5j4isd02i70x8wcav824zaj4a0azcnmg5d16l9817gy5n0";
+  # TODO: remove for NixOS >= 20.09
+  modSha256 = vendorSha256;
 
   buildFlagsArray = [ "-ldflags=-s -w -X main.version=${version}" ];
 
