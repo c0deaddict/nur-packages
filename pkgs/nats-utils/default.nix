@@ -23,7 +23,7 @@ buildGoModule rec {
 
   overrideModAttrs = _: {
     postBuild = ''
-      sed -i '/## explicit/d' vendor/modules.txt
+      [ -e vendor/modules.txt ] && sed -i '/## explicit/d' vendor/modules.txt
     '';
   };
 
