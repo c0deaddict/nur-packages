@@ -13,7 +13,7 @@ buildGoModule rec {
 
   buildInputs = [ libpcap ];
 
-  vendorSha256 = "0xfvnpsbnml6y4999h4bkqpf450z5v9w0q22j54wkm0qab72ijci";
+  vendorSha256 = null;
   modSha256 = vendorSha256;
 
   buildFlagsArray = [ "-ldflags=-s -w -X main.version=${version}" ];
