@@ -16,6 +16,9 @@ buildGoModule rec {
   vendorSha256 = null;
   modSha256 = vendorSha256;
 
+  # Requires network.
+  doCheck = false;
+
   buildFlagsArray = [ "-ldflags=-s -w -X main.version=${version}" ];
 
   postInstall = ''
