@@ -39,6 +39,7 @@ rec {
 
   nats-utils = pkgs.callPackage ./pkgs/nats-utils {};
 
+  stan-utils = pkgs.callPackage ./pkgs/stan-utils {};
 
   lock-gnome-keyring = pkgs.callPackage ./pkgs/lock-gnome-keyring {};
 
@@ -59,5 +60,11 @@ rec {
   yarn2 = pkgs.callPackage ./pkgs/yarn2 {};
 
   zsh-histdb = pkgs.callPackage ./pkgs/zsh-histdb {};
+
+  bonfire = pkgs.callPackage ./pkgs/bonfire {};
+
+  enemyterritory = pkgs.callPackage_i686 ./pkgs/enemyterritory {};
+
+  etlegacy = pkgs.callPackage_i686 ./pkgs/etlegacy {};  
 
 }
