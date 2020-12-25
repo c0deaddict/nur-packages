@@ -22,20 +22,24 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    mkdir -p $out/bin
-    cp -r etlegacy-v${version}-i386/* $out/bin/
+    mkdir -p $out/share $out/bin
+    cp -r etlegacy-v${version}-i386/* $out/share/
+    mv $out/share/{etl,etlded} $out/bin/
+
+    # NixOS fails to build if this file is present (we're building 32-bit here).
+    rm $out/share/legacy/omni-bot/omnibot_et.x86_64.so
 
     wrapProgram "$out/bin/etl" \
-      --run "cd $out/bin" \
+      --run "cd $out/share" \
       --set LD_LIBRARY_PATH "${stdenv.lib.makeLibraryPath [ alsaLib ]}"
 
     wrapProgram "$out/bin/etlded" \
-      --run "cd $out/bin"
+      --run "cd $out/share"
   '';
 
   meta = with stdenv.lib; {
-    homepage = "";
-    description = "";
+    homepage = "https://www.etlegacy.com/";
+    description = "Open source project that aims to create a fully compatible client and server for the popular online FPS game Wolfenstein: Enemy Territory";
     platforms = platforms.linux;
     maintainers = with maintainers; [ c0deaddict ];
   };
