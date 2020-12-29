@@ -65,6 +65,8 @@ rec {
 
   enemyterritory = pkgs.callPackage_i686 ./pkgs/enemyterritory {};
 
-  etlegacy = pkgs.callPackage_i686 ./pkgs/etlegacy {};  
+  etlegacy = pkgs.callPackage_i686 ./pkgs/etlegacy {};
+
+  sql_exporter = pkgs.callPackage ./pkgs/sql_exporter {};
 
 }
