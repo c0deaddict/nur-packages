@@ -39,7 +39,8 @@ rec {
 
   nats-utils = pkgs.callPackage ./pkgs/nats-utils {};
 
-  stan-utils = pkgs.callPackage ./pkgs/stan-utils {};
+  # Go mod/vendors is broken.
+  # stan-utils = pkgs.callPackage ./pkgs/stan-utils {};
 
   lock-gnome-keyring = pkgs.callPackage ./pkgs/lock-gnome-keyring {};
 
@@ -66,7 +67,5 @@ rec {
   enemyterritory = pkgs.callPackage_i686 ./pkgs/enemyterritory {};
 
   etlegacy = pkgs.callPackage_i686 ./pkgs/etlegacy {};
-
-  sql_exporter = pkgs.callPackage ./pkgs/sql_exporter {};
 
 }
