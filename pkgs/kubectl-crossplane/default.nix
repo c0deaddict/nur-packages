@@ -2,8 +2,8 @@
 
 let
 
-  channel = "master";
-  version = "v1.2.0-rc.0.109.gd04a059f";
+  channel = "stable";
+  version = "v1.1.0";
 
 in stdenv.mkDerivation {
   name = "kubectl-crossplane";
@@ -12,7 +12,7 @@ in stdenv.mkDerivation {
   src = fetchurl {
     url =
       "https://releases.crossplane.io/${channel}/${version}/bin/linux_amd64/crank";
-    sha256 = "1f2ddc91b5cxyq366bpxdh6zsd1bqyb9ffvx97wfs16x6ldi2y57";
+    sha256 = "0rp9q5dl4974p3c65i7w53j7g8h7b9rd260yc9qhlhhc69a92al4";
   };
 
   dontUnpack = true;
