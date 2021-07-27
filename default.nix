@@ -77,4 +77,6 @@ rec {
 
   pamidicontrol = pkgs.callPackage ./pkgs/pamidicontrol {};
 
+  prometheus-nats-exporter = pkgs.callPackage ./pkgs/prometheus-nats-exporter {};
+
 }
