@@ -2,6 +2,7 @@
   prometheus-unbound-exporter = ./prometheus-unbound-exporter;
   prometheus-nats-exporter = ./prometheus-nats-exporter;
   prometheus-smartmon-collector = ./prometheus-smartmon-collector;
+  prometheus-nvme-collector = ./prometheus-nvme-collector;
   import-garmin-connect = ./import-garmin-connect;
   solaredge-influx = ./solaredge-influx;
   apt-cacher-ng = ./apt-cacher-ng;
