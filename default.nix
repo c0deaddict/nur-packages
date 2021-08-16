@@ -79,4 +79,6 @@ rec {
 
   prometheus-nats-exporter = pkgs.callPackage ./pkgs/prometheus-nats-exporter {};
 
+  rpi-imager = pkgs.libsForQt5.callPackage ./pkgs/rpi-imager {};
+
 }
