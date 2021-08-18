@@ -81,4 +81,6 @@ rec {
 
   rpi-imager = pkgs.libsForQt5.callPackage ./pkgs/rpi-imager {};
 
+  i3-balance-workspace = pkgs.python3Packages.callPackage ./pkgs/i3-balance-workspace {};
+
 }
