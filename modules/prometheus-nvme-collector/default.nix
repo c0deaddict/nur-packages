@@ -48,6 +48,7 @@ in {
       description = "Timer for the Prometheus nvme collector";
       partOf = [ "prometheus-nvme-collector.service" ];
       wantedBy = [ "timers.target" ];
+      timerConfig.OnBootSec = "1m";
       timerConfig.OnUnitActiveSec = cfg.interval;
     };
   };

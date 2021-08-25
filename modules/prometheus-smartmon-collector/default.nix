@@ -48,6 +48,7 @@ in {
       description = "Timer for the Prometheus smartmon collector";
       partOf = [ "prometheus-smartmon-collector.service" ];
       wantedBy = [ "timers.target" ];
+      timerConfig.OnBootSec = "1m";
       timerConfig.OnUnitActiveSec = cfg.interval;
     };
   };
