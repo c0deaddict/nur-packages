@@ -51,7 +51,7 @@ in
         Restart = "always";
         PrivateTmp = true;
         WorkingDirectory = /tmp;
-        EnableDynamicUser = true;
+        DynamicUser = true;
         ExecStart = ''
           ${pkgs.prometheus-nats-exporter}/bin/prometheus-nats-exporter \
             -addr ${cfg.listenAddress} \
