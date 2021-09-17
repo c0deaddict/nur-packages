@@ -16,8 +16,6 @@ buildGoModule rec {
 
   doCheck = false;
 
-  buildFlagsArray = [ "-ldflags=-s -w -X main.version=${version}" ];
-
   meta = with lib; {
     description = "Tool for creating nkey/jwt based configurations";
     homepage = "https://github.com/nats-io/nsc";
