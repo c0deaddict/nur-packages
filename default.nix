@@ -83,4 +83,6 @@ rec {
 
   i3-balance-workspace = pkgs.python3Packages.callPackage ./pkgs/i3-balance-workspace {};
 
+  kubectl-cert-manager = pkgs.callPackage ./pkgs/kubectl-cert-manager {};
+
 }
