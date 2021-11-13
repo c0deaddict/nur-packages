@@ -1,5 +1,5 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p nodePackages.node2nix nodejs-16_x curl jq nix-update
+#! nix-shell -i bash -p nodePackages.node2nix nodejs-14_x curl jq nix-update
 
 CURRENT_VERSION=$(nix eval --raw '(with import ../../.. {}; zigbee2mqtt.version)')
 TARGET_VERSION=$(curl https://api.github.com/repos/Koenkk/zigbee2mqtt/releases/latest | jq -r ".tag_name")
@@ -13,7 +13,7 @@ fi
 curl -LO $ZIGBEE2MQTT/package.json
 curl -LO $ZIGBEE2MQTT/npm-shrinkwrap.json
 
-node2nix --nodejs-16 \
+node2nix --nodejs-14 \
   -l npm-shrinkwrap.json \
   -c node.nix \
   --bypass-cache \
