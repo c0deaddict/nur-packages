@@ -81,4 +81,6 @@ rec {
 
   kubectl-cert-manager = pkgs.callPackage ./pkgs/kubectl-cert-manager {};
 
+  zigbee2mqtt = pkgs.callPackage ./pkgs/zigbee2mqtt {};
+
 }
