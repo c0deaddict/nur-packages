@@ -12,7 +12,7 @@ package.override rec {
     owner = "Koenkk";
     repo = "zigbee2mqtt";
     rev = version;
-    sha256 = "0rpmm4pwm8s4i9fl26ql0czg5kijv42k9wwik7jb3ppi5jzxrakd";
+    sha256 = "1ajf367ycal89c60z899ppnwbc4i9f7w0xg9an3y5bh4cyp17i0m";
   };
 
   passthru.tests.zigbee2mqtt = nixosTests.zigbee2mqtt;
