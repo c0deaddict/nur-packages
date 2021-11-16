@@ -1,25 +1,23 @@
 #!/usr/bin/env nix-shell
-#! nix-shell -i bash -p nodePackages.node2nix nodejs-12_x curl jq nix-update
+#! nix-shell -i bash -p nodePackages.node2nix nodejs-14_x curl jq
 
-CURRENT_VERSION=$(nix eval --raw '(with import ../../../.. {}; zigbee2mqtt.version)')
+set -euo pipefail
+# cd to the folder containing this script
+cd "$(dirname "$0")"
+
 TARGET_VERSION=$(curl https://api.github.com/repos/Koenkk/zigbee2mqtt/releases/latest | jq -r ".tag_name")
 ZIGBEE2MQTT=https://github.com/Koenkk/zigbee2mqtt/raw/$TARGET_VERSION
-
-if [[ "$CURRENT_VERSION" == "$TARGET_VERSION" ]]; then
-    echo "zigbee2mqtt is up-to-date: ${CURRENT_VERSION}"
-    exit 0
-fi
 
 curl -LO $ZIGBEE2MQTT/package.json
 curl -LO $ZIGBEE2MQTT/npm-shrinkwrap.json
 
-node2nix --nodejs-12 \
-  -l npm-shrinkwrap.json \
-  -c node.nix \
-  --bypass-cache \
-  --no-copy-node-env
+node2nix --nodejs-14 \
+  --development \
+  --lock npm-shrinkwrap.json \
+  --output node-packages.nix \
+  --composition node.nix
 
-rm package.json npm-shrinkwrap.json
+rm npm-shrinkwrap.json
 
 # (
 #     cd ../../../..
