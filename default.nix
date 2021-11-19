@@ -83,4 +83,6 @@ rec {
 
   zigbee2mqtt = pkgs.callPackage ./pkgs/zigbee2mqtt {};
 
+  emacs-i3 = pkgs.callPackage ./pkgs/emacs-i3 {};
+
 }
