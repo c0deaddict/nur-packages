@@ -2,16 +2,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "emacs-i3";
-  version = "0.1.0";
+  version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "c0deaddict";
     repo = pname;
     rev = version;
-    sha256 = "sha256-mc5fG94+L0WbgRsJJLHGq7S1203uW/QfLzxT86XL9xY=";
+    sha256 = "sha256-64a6mZF4p3UPd9ih/CU9LdLJ7b1AX3zcpN/hC/TQVFw=";
   };
 
-  cargoSha256 = "sha256-5kXP5juyaCfHG5eDEdHWl2rNQ9m5zW9c3UseapkXJGg=";
+  cargoSha256 = "sha256-JD5akkaYjtgEfAa0+EEgF3Xv3U7kenU2B9qSgk254qY=";
 
   meta = with lib; {
     description = "Emacs i3 unified window management";
