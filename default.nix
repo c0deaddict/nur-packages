@@ -85,4 +85,6 @@ rec {
 
   emacs-i3 = pkgs.callPackage ./pkgs/emacs-i3 {};
 
+  gcfflasher = pkgs.callPackage ./pkgs/gcfflasher {};
+
 }
