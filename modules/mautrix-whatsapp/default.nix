@@ -38,7 +38,7 @@ in {
     services.mautrix-whatsapp.settings = {
       homeserver = { domain = config.services.matrix-synapse.server_name; };
       appservice = rec {
-        address = "http://localhost:${port}";
+        address = "http://localhost:${toString port}";
         hostname = "0.0.0.0";
         port = 29318;
         database = {
