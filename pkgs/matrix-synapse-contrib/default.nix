@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     repo = "synapse";
     rev = "v${version}";
     sha256 = {
-      "1.52.0" = "sha256-TeyRmUZVfCZ05jP7/na9knpGU9bhkY3kmwfjM42Cqlc=";
+      "1.53.0" = "sha256-aChofKpBQy+HQCTW9yNV+F03MpSyDaszz86H/pJGm00=";
     }.${version};
   };
 
