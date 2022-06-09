@@ -56,7 +56,7 @@ in {
         relaybot = {
           enabled = true;
           management = "!whatsappbot:${
-              toString (config.services.matrix-synapse.server_name)
+              toString (config.services.matrix-synapse.settings.server_name)
             }";
         };
         logging = {
