@@ -27,8 +27,8 @@ in {
       '';
       default = {
         homeserver = {
-          address = config.services.matrix-synapse.public_baseurl;
-          domain = config.services.matrix-synapse.server_name;
+          address = config.services.matrix-synapse.settings.public_baseurl;
+          domain = config.services.matrix-synapse.settings.server_name;
         };
         appservice = rec {
           port = 29318;
