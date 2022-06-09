@@ -136,7 +136,7 @@ in {
 
     users.groups.mautrix-whatsapp = { };
 
-    services.matrix-synapse.app_service_config_files = [ registrationFile ];
+    services.matrix-synapse.settings.app_service_config_files = [ registrationFile ];
 
   };
 }
