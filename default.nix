@@ -105,4 +105,5 @@ rec {
 
   pomo = pkgs.callPackage ./pkgs/pomo {};
 
+  matrix-hookshot = pkgs.callPackage ./pkgs/matrix-hookshot { };
 }
