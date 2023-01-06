@@ -38,7 +38,7 @@ def sway_get_monitors():
             y=output['rect']['y'],
         )
         for output in json.loads(outputs)
-        if not output['non_desktop'] and output.get('active', False)
+        if not output.get('non_desktop', False) and output.get('active', False)
     ]
 
 
