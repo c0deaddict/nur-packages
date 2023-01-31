@@ -50,7 +50,7 @@ in
         StateDirectoryMode = "0750";
 
         # Hardening
-        CapabilityBoundingSet = [ "CAP_NET_BIND_SERVICE" ];
+        AmbientCapabilities = [ "CAP_NET_BIND_SERVICE" ];
         LockPersonality = true;
         MemoryDenyWriteExecute = true;
         NoNewPrivileges = true;
