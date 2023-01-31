@@ -92,7 +92,7 @@ rec {
 
   zsh-kubectl-prompt = pkgs.callPackage ./pkgs/zsh-kubectl-prompt { };
 
-  matrix-hookshot = pkgs.callPackage ./pkgs/matrix-hookshot { };
+  # matrix-hookshot = pkgs.callPackage ./pkgs/matrix-hookshot { };
 
   acme-dns = pkgs.callPackage ./pkgs/acme-dns {};
 }
