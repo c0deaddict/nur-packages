@@ -36,7 +36,6 @@ let
     };
   };
 
-
   data = pkgs.writeText "acme-dns-data.sql" (concatStringsSep "\n" (lib.mapAttrsToList
     (name: entry: ''
       INSERT INTO records (Username, Password, Subdomain, AllowFrom)
@@ -50,7 +49,7 @@ let
   provision = pkgs.writers.writeDash "provision-database" ''
     db="/var/lib/acme-dns/acme-dns.db"
     rm -fr "$db"
-    ${pkgs.sqlite}/bin/sqlite3 --init /dev/null $db ".read ${schema}"
+    ${pkgs.sqlite}/bin/sqlite3 --init /dev/null $db ".read ${./schema.sql}"
     ${pkgs.sqlite}/bin/sqlite3 --init /dev/null $db ".read ${data}"
   '';
 
