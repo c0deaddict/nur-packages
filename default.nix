@@ -64,12 +64,6 @@ rec {
 
   pg_flame = pkgs.callPackage ./pkgs/pg_flame { };
 
-  prometheus-nats-exporter = pkgs.callPackage ./pkgs/prometheus-nats-exporter { };
-
-  prometheus-openweathermap-exporter = pkgs.callPackage ./pkgs/prometheus-openweathermap-exporter { };
-
-  prometheus-unbound-exporter = pkgs.callPackage ./pkgs/prometheus-unbound-exporter { };
-
   rds_exporter = pkgs.callPackage ./pkgs/rds_exporter { };
 
   rofi-pulse = pkgs.callPackage ./pkgs/rofi-pulse { my-lib = lib; };
