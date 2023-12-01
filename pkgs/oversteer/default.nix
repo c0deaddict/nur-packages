@@ -1,6 +1,19 @@
-{ lib, stdenv, meson, ninja, pkgconfig, gettext, fetchFromGitHub, python3
-, wrapGAppsHook, gtk3, glib, gnome3, appstream-glib, gobject-introspection
-, desktop-file-utils }:
+{ lib
+, stdenv
+, meson
+, ninja
+, pkg-config
+, gettext
+, fetchFromGitHub
+, python3
+, wrapGAppsHook
+, gtk3
+, glib
+, gnome3
+, appstream-glib
+, gobject-introspection
+, desktop-file-utils
+}:
 
 python3.pkgs.buildPythonApplication rec {
   pname = "oversteer";
@@ -10,7 +23,7 @@ python3.pkgs.buildPythonApplication rec {
     owner = "berarma";
     repo = "oversteer";
     rev = version;
-    sha256 = "0mkhsyxv1avqkfwcvxr3pwhc218cqpb0jq17g8h8swl43cjs48gi";
+    hash = "sha256-8SGiJRuEco0geidgCdbFDAXBIL8j9824m3irsLvXcFY=";
   };
 
   format = "other";
@@ -27,7 +40,7 @@ python3.pkgs.buildPythonApplication rec {
     meson
     ninja
     gettext
-    pkgconfig
+    pkg-config
     wrapGAppsHook
     desktop-file-utils
     appstream-glib

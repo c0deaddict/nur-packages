@@ -8,11 +8,10 @@ buildGoModule rec {
     owner = "joohoi";
     repo = "acme-dns";
     rev = "v${version}";
-    sha256 = "sha256-qQwvhouqzkChWeu65epgoeMNqZyAD18T+xqEMgdMbhA=";
+    hash = "sha256-qQwvhouqzkChWeu65epgoeMNqZyAD18T+xqEMgdMbhA=";
   };
 
-  vendorSha256 = "sha256-q/P+cH2OihvPxPj2XWeLsTBHzQQABp0zjnof+Ys/qKo=";
-  modSha256 = vendorSha256;
+  vendorHash = "sha256-q/P+cH2OihvPxPj2XWeLsTBHzQQABp0zjnof+Ys/qKo=";
 
   meta = with lib; {
     homepage = "https://github.com/joohoi/acme-dns";

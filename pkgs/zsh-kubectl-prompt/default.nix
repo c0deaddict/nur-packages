@@ -8,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "superbrothers";
     repo = pname;
     rev = "v${version}";
-    sha256 = "10gmhxcg2qvb6lcsckrmrgza6pr5gf79vwp96822casqrhc15q3q";
+    hash = "sha256-eOASGMxYKyYEMunynY57JV+j/ss1T6YZNWtj8ViH9YE=";
   };
 
   buildInputs = [ zsh ];

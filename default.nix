@@ -16,10 +16,6 @@ rec {
   hmModules = import ./hm-modules; # Home-manager modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  argo-rollouts = pkgs.callPackage ./pkgs/argo-rollouts { };
-
-  bitwarden-rofi = pkgs.callPackage ./pkgs/bitwarden-rofi { };
-
   dcpj315w = pkgs.callPackage ./pkgs/brother/dcpj315w { };
 
   emacs-i3 = pkgs.callPackage ./pkgs/emacs-i3 { };
@@ -42,29 +38,15 @@ rec {
 
   i3-balance-workspace = pkgs.python3Packages.callPackage ./pkgs/i3-balance-workspace { };
 
-  import-garmin-connect = pkgs.python3Packages.callPackage ./pkgs/import-garmin-connect { };
-
   keyhub-cli = pkgs.callPackage ./pkgs/keyhub-cli { };
 
   kubectl-cert-manager = pkgs.callPackage ./pkgs/kubectl-cert-manager { };
-
-  kubectl-crossplane = pkgs.callPackage ./pkgs/kubectl-crossplane { };
 
   lock-gnome-keyring = pkgs.callPackage ./pkgs/lock-gnome-keyring { };
 
   marble-marcher = pkgs.callPackage ./pkgs/marble-marcher { };
 
-  matrix-synapse-contrib = pkgs.callPackage ./pkgs/matrix-synapse-contrib { };
-
-  nsc = pkgs.callPackage ./pkgs/nats-nsc { };
-
   oversteer = pkgs.callPackage ./pkgs/oversteer { };
-
-  pamidicontrol = pkgs.callPackage ./pkgs/pamidicontrol { };
-
-  pg_flame = pkgs.callPackage ./pkgs/pg_flame { };
-
-  rds_exporter = pkgs.callPackage ./pkgs/rds_exporter { };
 
   rofi-pulse = pkgs.callPackage ./pkgs/rofi-pulse { my-lib = lib; };
 
@@ -76,19 +58,9 @@ rec {
 
   solo2-cli = pkgs.callPackage ./pkgs/solo2-cli { };
 
-  stolon = pkgs.callPackage ./pkgs/stolon { };
-
-  terraformer-aws = (pkgs.callPackage ./pkgs/terraformer { }).aws;
-
-  tplink-configurator = pkgs.callPackage ./pkgs/tplink-configurator { };
-
-  zpool_prometheus = pkgs.callPackage ./pkgs/zpool_prometheus { };
-
   zsh-histdb = pkgs.callPackage ./pkgs/zsh-histdb { };
 
   zsh-kubectl-prompt = pkgs.callPackage ./pkgs/zsh-kubectl-prompt { };
-
-  # matrix-hookshot = pkgs.callPackage ./pkgs/matrix-hookshot { };
 
   acme-dns = pkgs.callPackage ./pkgs/acme-dns {};
 
