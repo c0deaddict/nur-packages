@@ -15,7 +15,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = pkgs.my-nur.prometheus-nats-exporter;
+      default = pkgs.prometheus-nats-exporter;
     };
 
     port = mkOption {
@@ -56,7 +56,7 @@ in
       serviceConfig = {
         Restart = "always";
         PrivateTmp = true;
-        WorkingDirectory = /tmp;
+        WorkingDirectory = "/tmp";
         DynamicUser = true;
         ExecStart = ''
           ${cfg.package}/bin/prometheus-nats-exporter \
