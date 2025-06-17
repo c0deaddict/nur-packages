@@ -10,7 +10,7 @@ let
 
 in stdenv.mkDerivation rec {
   name = "keyhub-cli-${version}";
-  version = "26";
+  version = "27";
 
   src = fetchurl {
     url = "https://files.topicus-keyhub.com/manual/keyhub-cli-${version}.zip";
