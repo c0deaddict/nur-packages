@@ -48,6 +48,7 @@ rec {
 
   marble-marcher = pkgs.callPackage ./pkgs/marble-marcher { };
 
+  nftables-exporter = pkgs.callPackage ./pkgs/nftables-exporter {};
 
   rofi-pulse = pkgs.callPackage ./pkgs/rofi-pulse { my-lib = lib; };
 
