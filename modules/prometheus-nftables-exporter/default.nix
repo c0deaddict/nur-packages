@@ -22,17 +22,19 @@ in
     };
 
     settings = mkOption {
-      default = {
-        bind_to = "[::1]:9630";
-        url_path = "/metrics";
-        nft_location = "${pkgs.nftables}/bin/nft";
-        log_level = "warn";
-      };
+      default = { };
       type = format.type;
     };
   };
 
   config = mkIf cfg.enable {
+    services.prometheus.nftables-exporter.settings = {
+      bind_to = lib.mkDefault "[::1]:9630";
+      url_path = lib.mkDefault "/metrics";
+      nft_location = lib.mkDefault "${pkgs.nftables}/bin/nft";
+      log_level = lib.mkDefault "warn";
+    };
+
     systemd.services."prometheus-nftables-exporter" = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
