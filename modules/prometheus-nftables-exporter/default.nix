@@ -18,7 +18,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = pkgs.prometheus-nftables-exporter;
+      default = pkgs.nftables-exporter;
     };
 
     settings = mkOption {
