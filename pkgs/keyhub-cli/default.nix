@@ -39,7 +39,7 @@ stdenv.mkDerivation (finalAttrs: {
   meta = with lib; {
     description = "A command line interface to Topicus KeyHub";
     homepage = "https://topicus-keyhub.com/";
-    # license = lib.licenses.unfree;
+    license = lib.licenses.unfree;
     mainProgram = "keyhub";
     maintainers = with maintainers; [ c0deaddict ];
     platforms = [ "x86_64-linux" ];
